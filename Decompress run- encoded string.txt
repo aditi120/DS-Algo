@@ -1,0 +1,17 @@
+class Solution {
+public:
+    vector<int> decompressRLElist(vector<int>& nums) {
+        vector<int> v; int a,b;
+        for(int i=0;i<nums.size()-1; ){
+            a= nums[i];
+            b=nums[i+1];
+            
+            while(a>0){
+                v.push_back(b);
+                a--;
+            }
+            i+=2;
+        }
+        return v;
+    }
+};
